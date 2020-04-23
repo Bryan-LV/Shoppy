@@ -11,6 +11,10 @@ html, body {
   --white : #d8d8d8;
 }
 
+.container{
+  padding:0 40px;
+}
+
 .nav{
   display: flex;
   align-items: center;
@@ -20,13 +24,45 @@ html, body {
   color: var(--white);
 }
 
-.container{
+.main{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.product-list-container{
+  width:100%;
   padding:0 40px;
 }
 
-.sidebar{
-  padding:10px;
+.product-card{
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-bottom: 20px;
+  padding: 20px 30px;
+  color: var(--white);
   background-color: var(--mid-black);
+}
+
+.product-card__title{
+  font-size: large;
+}
+
+.product-card__btn{
+  padding:12px 28px;
+  border:0;
+  border-radius: 4px;
+  color: var(--white);
+  font-size: medium;
+  cursor: pointer;
+}
+
+.sidebar{
+  padding:10px 80px 10px 40px;
+  background-color: var(--mid-black);
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .category-link{

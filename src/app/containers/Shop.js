@@ -10,23 +10,26 @@ function Shop(props) {
 
   return (
     <div className="shop">
-      <Navbar cart={props.itemsInCart}/>
-      <SideBar categories={db}/>
-      <Main/>
+      <Navbar itemsInCart={props.itemsInCart}/>
+      <main className="main">
+        <SideBar categories={db} selectCategory={props.selectCategory}/>
+        <Main addItem={props.addItem} visibleShop={props.visibleShop}/>
+      </main>
     </div>
   )
 }
 
 const mapState = (state) => {
   return {
-    shop: state.store.shop,
+    visibleShop: state.store.visibleShop,
     itemsInCart: state.store.itemsInCart
   }
 }
 
 const mapDispatch = (dispatch) => {
   return {
-    addItem: () => dispatch(shopActions.addItemToCart())
+    addItem: (item) => dispatch(shopActions.addItemToCart(item)),
+    selectCategory: (category) => dispatch(shopActions.selectCategory(category))
   }
 }
 

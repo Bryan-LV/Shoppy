@@ -1,6 +1,7 @@
+import db from '../../db';
 const shopState = {
-  shop: [],
-  itemsInCart:0,
-  cartItems:[]
+  shop: [...db],
+  visibleShop:[...db],
+  itemsInCart:[]
 }
 export default shopState;
