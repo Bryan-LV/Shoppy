@@ -12,6 +12,11 @@ body {
   --white: #d8d8d8;
 }
 
+a{
+  text-decoration: none;
+  color: var(--white);
+}
+
 .container {
   padding: 0 40px;
 }
@@ -96,10 +101,20 @@ body {
   color: var(--white)
 }
 
-.cyan {
-  background-color: darkcyan
+.shopping-cart__container {
+  width: 90%;
+  margin: auto;
+  padding: 20px 30px;
+  margin-top: 15px;
+  border-radius: 6px;
+  background-color: var(--mid-black);
 }
 
-.purple {
-  background-color: rgb(90, 6, 90);
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
+

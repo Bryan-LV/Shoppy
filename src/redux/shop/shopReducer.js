@@ -29,6 +29,9 @@ const shopReducer = (state = shopState, action) => {
       const filteredItemsInCart = editQuantity.filter(item => item.quantity !== 0);
       return {...state, itemsInCart: filteredItemsInCart};
 
+    case actionTypes.DELETE_ENTIRE_ITEM_FROM_CART:
+      return {...state, itemsInCart: state.itemsInCart.filter(item => item.id !== action.payload)}
+
     case actionTypes.SELECT_CATEGORY:
       const filteredShopList = state.shop.filter(product => product.department === action.payload);
       return {...state, visibleShop: filteredShopList}
