@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import ProductCard from '../units/ProductCard'
 
-export default function Main({visibleShop, addItem}) {
+export default function Main({visibleShop, addItemToCart, removeItemFromCart}) {
 
   useEffect(() => {
   }, [visibleShop])
@@ -11,7 +11,8 @@ export default function Main({visibleShop, addItem}) {
       {visibleShop.map( product => (
         <ProductCard
           product={product}
-          addItem={addItem}
+          addItemToCart={addItemToCart}
+          removeItemFromCart={removeItemFromCart}
           key={product.id}
         />
       ))}

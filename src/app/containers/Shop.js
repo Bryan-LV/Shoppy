@@ -10,10 +10,10 @@ function Shop(props) {
 
   return (
     <div className="shop">
-      <Navbar itemsInCart={props.itemsInCart}/>
+        <Navbar itemsInCart={props.itemsInCart}/>
       <main className="main">
-        <SideBar categories={db} selectCategory={props.selectCategory}/>
-        <Main addItem={props.addItem} visibleShop={props.visibleShop}/>
+        <SideBar categories={db} selectCategory={props.selectCategory} resetCategory={props.resetCategory}/>
+        <Main addItemToCart={props.addItemToCart} removeItemFromCart={props.removeItemFromCart} visibleShop={props.visibleShop}/>
       </main>
     </div>
   )
@@ -28,8 +28,10 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    addItem: (item) => dispatch(shopActions.addItemToCart(item)),
-    selectCategory: (category) => dispatch(shopActions.selectCategory(category))
+    addItemToCart: (item) => dispatch(shopActions.addItemToCart(item)),
+    removeItemFromCart: (id) => dispatch(shopActions.removeItemFromCart(id)),
+    selectCategory: (category) => dispatch(shopActions.selectCategory(category)),
+    resetCategory: () => dispatch(shopActions.resetCategory())
   }
 }
 

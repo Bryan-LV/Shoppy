@@ -2,7 +2,13 @@ import React from 'react'
 import cartIcon from '../../assets/icons/shopping-cart.png'
 
 export default function Navbar({itemsInCart}) {
-  const cartCount = itemsInCart.length;
+  // iterate through each item in cart
+  // reduce all numbers into the length
+  const addQuantity = (quantity, item) => {
+    return quantity + item.quantity
+  }
+  
+  const cartCount = itemsInCart.reduce(addQuantity, 0);
 
   return (
     <nav className="container-fluid nav">

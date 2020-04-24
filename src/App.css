@@ -15,6 +15,10 @@ html, body {
   padding:0 40px;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .nav{
   display: flex;
   align-items: center;
@@ -59,13 +63,30 @@ html, body {
 }
 
 .sidebar{
-  padding:10px 80px 10px 40px;
+  padding:10px 55px 10px 40px;
   background-color: var(--mid-black);
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
+  width: 25%;
+  min-width: 250px;
+  position: sticky;
+  top: 0;
+}
+
+.filter-title{
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
 }
 
 .category-link{
   cursor: pointer;
   color: var(--white)
+}
+
+.cyan {
+  background-color:darkcyan
+}
+
+.purple {
+  background-color: rgb(90, 6, 90);
 }
