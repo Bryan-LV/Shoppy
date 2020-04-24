@@ -17,9 +17,15 @@ export default function ProductCard({ product, addItemToCart, removeItemFromCart
     if(delta === 'inc'){
       addItemToCart(product)
       setItemsAdded(prevItems => prevItems + 1)
-    } else {
+      return;
+    } else if(itemsAdded === 1 && delta === 'dec'){
       removeItemFromCart(product.id)
       setItemsAdded(prevItems => prevItems - 1);
+      setIsInCart(false)
+      return;
+    } else {
+        removeItemFromCart(product.id)
+        setItemsAdded(prevItems => prevItems - 1);
     }
   }
   
@@ -31,10 +37,10 @@ export default function ProductCard({ product, addItemToCart, removeItemFromCart
       <p className="product-card__category">{category}</p>
       {isInCart  === false ?
         <button className="product-card__btn" onClick={handleClick}>Add to cart</button> :
-        <div>
-          <button onClick={(() => handleItemCount('dec'))}>-</button>
+        <div className="product-card__quantity-btn">
+          <button className="product_card__delta-btns pointer" onClick={(() => handleItemCount('dec'))}>-</button>
           <p>{itemsAdded}</p>
-          <button onClick={(() => handleItemCount('inc'))}>+</button>
+          <button className="product_card__delta-btns pointer" onClick={(() => handleItemCount('inc'))}>+</button>
         </div>}
     </div>
   )
