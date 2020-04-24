@@ -8,7 +8,7 @@ function CheckOut(props) {
   return (
     <div className="checkout">
       <Navbar itemsInCart={props.itemsInCart}/>
-      <ShoppingCart itemsInCart={props.itemsInCart} deleteEntireItemFromCart={props.deleteEntireItemFromCart}/>
+      <ShoppingCart itemsInCart={props.itemsInCart} deleteEntireItemFromCart={props.deleteEntireItemFromCart} clearCart={props.clearCart}/>
     </div>
   )
 }
@@ -21,7 +21,8 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    deleteEntireItemFromCart: (id) => dispatch(shopActions.deleteEntireItemFromCart(id))
+    deleteEntireItemFromCart: (id) => dispatch(shopActions.deleteEntireItemFromCart(id)),
+    clearCart: () => dispatch(shopActions.clearCart())
   }
 }
 
